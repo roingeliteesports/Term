@@ -1,0 +1,335 @@
+/* Core Styling & Variables */
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --primary-color: #ff0000;
+    --secondary-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --consent-bg: rgba(30, 30, 30, 0.95);
+    --highlight-color: #ff9900;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczMoQ7akHxmFHP0QIhL7JGrknEDENqNOSlMhOIvvV0pP7ENvCbbog79Fwk2kCZ7QG3U1NuEwSIZNeeWbXfBYr-mAOu6apxHcgNS2ezGiGmLd1vGLBDE=w2400');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: var(--text-color);
+}
+
+/* Consent Modal */
+#consent-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.consent-container {
+    background: var(--consent-bg);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    text-align: left;
+}
+
+.consent-title {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.consent-content {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.consent-checkbox {
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.consent-checkbox input {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.consent-checkbox a {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
+
+.consent-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.consent-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.consent-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.accept-button {
+    background: #00cc00;
+    color: #000;
+}
+
+.accept-button:hover:not(:disabled) {
+    background: #00ff00;
+}
+
+.reject-button {
+    background: #cc0000;
+    color: #fff;
+}
+
+.reject-button:hover:not(:disabled) {
+    background: #ff0000;
+}
+
+.terms-highlight {
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+/* Rejection Message */
+#rejection-message {
+    text-align: center;
+    padding: 30px;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#rejection-message h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#rejection-message p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+#rejection-message a {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
+
+/* Main Content Container */
+.container {
+    text-align: center;
+    padding: 15px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: none;
+}
+
+/* Profile Photo & Title */
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -10px;
+    border: 3px solid var(--secondary-color);
+}
+
+.name {
+    font-size: 1.8em;
+    color: #000000;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Link Buttons */
+.link-button {
+    display: block;
+    background: #000000;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+.link-button:hover {
+    background: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #black;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.footer a {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+/* Full Terms Page */
+#terms-full-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 1001;
+    overflow-y: auto;
+    padding: 20px;
+    color: white;
+    display: none;
+}
+
+.terms-content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(30,30,30,0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.terms-header {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#close-terms {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.terms-title {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.terms-updated {
+    text-align: center;
+}
+
+/* Utility classes to hide elements from Google Sites */
+.site-header, div[aria-label="Site information"], .site-info, .site-information, div[class*="site-info"] {
+    display: none !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+    .container {
+        padding: 25px;
+        max-width: 500px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 2.2em;
+    }
+
+    .link-button {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+    
+    .consent-container {
+        padding: 25px;
+    }
+    
+    .consent-title {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 599px) {
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+ 
+    .consent-container {
+        padding: 10px;
+        margin: 10px;
+    }
+   
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+      
+    .name {
+        font-size: 1.5em;
+    }
+      
+    .consent-title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .consent-container {
+        max-height: 85vh;
+    }
+    
+    .container {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
